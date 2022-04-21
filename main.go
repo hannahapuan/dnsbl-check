@@ -19,7 +19,7 @@ type LookupResult struct {
 	Error         error
 }
 
-func lookup(address string, provider dnsblprovider.DNSBLProvider) LookupResult {
+func Lookup(address string, provider dnsblprovider.DNSBLProvider) LookupResult {
 	isListed, err := provider.IsBlacklisted(address)
 	if err != nil {
 		return LookupResult{
